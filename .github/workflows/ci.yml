@@ -20,6 +20,8 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
       - name: "install dependencies"
+        run: ls -la
+      - name: "install dependencies"
         run: pip3 install boto3 ec2_metadata pyinstaller
       - name: "build"
         run: pyinstaller -F set_record.py
