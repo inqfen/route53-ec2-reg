@@ -15,6 +15,10 @@ jobs:
         os: [ubuntu-18.04]
         python-version: [3.7, 38]
     steps:
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v1
+        with:
+          python-version: ${{ matrix.python-version }}
       - name: "install dependencies"
         run: pip3 install boto3 ec2_metadata pyinstaller
       - name: "build"
