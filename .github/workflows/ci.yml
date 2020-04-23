@@ -1,0 +1,19 @@
+name: build
+on:
+  push:
+    branches:
+      - "master"
+defaults:
+  run:
+    shell: "bash"
+jobs:
+  build:
+    name: "Build executable file"
+    strategy:
+      matrix:
+        python-version: [3.7, 38]
+    steps:
+      - name: "install dependencies"
+        run: pip3 install boto3 ec2_metadata pyinstaller
+      - name: "build"
+        run: pyinstaller -F set_record.py
