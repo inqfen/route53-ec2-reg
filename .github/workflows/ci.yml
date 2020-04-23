@@ -9,6 +9,7 @@ defaults:
 jobs:
   build:
     name: "Build executable file"
+    runs-on: "ubuntu-latest"
     strategy:
       matrix:
         python-version: [3.7, 38]
