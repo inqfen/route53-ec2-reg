@@ -19,8 +19,8 @@ jobs:
         uses: actions/setup-python@v1
         with:
           python-version: ${{ matrix.python-version }}
-      - name: "install dependencies"
-        run: ls -la ../
+      - name: "Checkout repo"
+        uses: actions/checkout@v2
       - name: "install dependencies"
         run: pip3 install boto3 ec2_metadata pyinstaller
       - name: "build"
