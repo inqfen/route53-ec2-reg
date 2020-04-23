@@ -9,9 +9,10 @@ defaults:
 jobs:
   build:
     name: "Build executable file"
-    runs-on: "ubuntu-latest"
+    runs-on: ${{ matrix.os }}
     strategy:
       matrix:
+        os: [ubuntu-18.04]
         python-version: [3.7, 38]
     steps:
       - name: "install dependencies"
